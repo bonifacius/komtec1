@@ -103,7 +103,7 @@ API должно предоставлять следующие методы:
   
         api/catalog/  
 
-- получение списка справочников, актуальных на указанную дату.
+- получение списка справочников, указанной даты.
   
         api/catalog/?created_date=<указанная дата в форсате YYYY-MM-DD>
 
@@ -111,12 +111,22 @@ API должно предоставлять следующие методы:
 
         api/catalog-items/?catalog__name=<имя справочника>&catalog__version=<номер версия>
 
+- получение списка справочников, актуальных на указанную дату(Получаем список справочников созданных ранее или ровно указанной даты)
+  
+        api/catalog-date/?created_date_lte=<указанная дата в форсате YYYY-MM-DD>
+
+
+
 
 
 ### Реализована фильтрация [django-filter](https://www.django-rest-framework.org/api-guide/filtering/#filtering)
     Доступно для Catalog & CatalogItem:
     DjangoFilterBackend, SearchFilter, OrderingFilter
-    
+
+### Реализована фильтрация с помощью [FilterSet](https://django-filter.readthedocs.io/en/stable/ref/filterset.html)
+    Сделано для api/catalog-date/?created_date_lte=<указанная дата в форсате YYYY-MM-DD> 
+
+    Получаем список справочников созданных ранее или ровно указанной даты
   
 ### **Административная панель**:
 

@@ -15,3 +15,7 @@ class CatalogItemSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class CatalogDateSerializer(ModelSerializer):
+    class Meta:
+        model = Catalog
+        fields = '__all__'
